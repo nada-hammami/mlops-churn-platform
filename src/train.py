@@ -1,5 +1,5 @@
 import pandas as pd
-import mlflow
+import mlflow,os
 import mlflow.sklearn
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
 
-DATA_PATH = "data/churn.csv"
+DATA_PATH = os.getenv("DATA_PATH", "data/churn.csv")
 MODEL_NAME = "churn-model"
 
 
@@ -37,6 +37,7 @@ def main(n_estimators=100, max_depth=5):
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42, stratify=y
     )
+    mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI", "sqlite:///mlflow.db"))
 
     mlflow.set_experiment("churn-prediction")
     with mlflow.start_run():
@@ -58,6 +59,7 @@ def main(n_estimators=100, max_depth=5):
 )
         print(f"F1={f1:.3f}  AUC={auc:.3f}")
 
+    return auc
 
 if __name__ == "__main__":
     main()

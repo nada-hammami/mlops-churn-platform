@@ -1,0 +1,82 @@
+{
+  "columns": {
+    "gender": {
+      "p_value": 0.9523987332747992,
+      "drift": false
+    },
+    "SeniorCitizen": {
+      "p_value": 0.9999621192107413,
+      "drift": false
+    },
+    "Partner": {
+      "p_value": 0.0034841270724232476,
+      "drift": true
+    },
+    "Dependents": {
+      "p_value": 0.17041568245350458,
+      "drift": false
+    },
+    "tenure": {
+      "p_value": 6.021939004226054e-286,
+      "drift": true
+    },
+    "PhoneService": {
+      "p_value": 0.2783669271341953,
+      "drift": false
+    },
+    "MultipleLines": {
+      "p_value": 0.3816348408516446,
+      "drift": false
+    },
+    "InternetService": {
+      "p_value": 0.6761541633013618,
+      "drift": false
+    },
+    "OnlineSecurity": {
+      "p_value": 0.3642828960795421,
+      "drift": false
+    },
+    "OnlineBackup": {
+      "p_value": 0.13191737890499244,
+      "drift": false
+    },
+    "DeviceProtection": {
+      "p_value": 0.9660156298165854,
+      "drift": false
+    },
+    "TechSupport": {
+      "p_value": 0.3248101463370342,
+      "drift": false
+    },
+    "StreamingTV": {
+      "p_value": 0.9794391555624281,
+      "drift": false
+    },
+    "StreamingMovies": {
+      "p_value": 0.591504189933741,
+      "drift": false
+    },
+    "Contract": {
+      "p_value": 0.0,
+      "drift": true
+    },
+    "PaperlessBilling": {
+      "p_value": 0.08695507872772566,
+      "drift": false
+    },
+    "PaymentMethod": {
+      "p_value": 0.7810601176489772,
+      "drift": false
+    },
+    "MonthlyCharges": {
+      "p_value": 1.23911556124e-312,
+      "drift": true
+    },
+    "TotalCharges": {
+      "p_value": 3.217622989763672e-18,
+      "drift": true
+    }
+  },
+  "drift_share": 0.2631578947368421,
+  "dataset_drift": true
+}
